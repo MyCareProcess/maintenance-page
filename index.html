@@ -1,42 +1,127 @@
-import React from 'react';
-import { Settings } from 'lucide-react';
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance</title>
+    <!-- Import de la police Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6D3DF2;
+            --primary-light: rgba(109, 61, 242, 0.05);
+            --primary-separator: rgba(109, 61, 242, 0.2);
+            --text-main: #111827;
+            --text-muted: #6B7280; z
+            --bg-color: #FFFFFF;
+        }
 
-/**
- * Page de Maintenance Ultra-Minimaliste
- * Style : Sobre, Poppins, Primary #6D3DF2
- */
-export default function App() {
-  return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 font-['Poppins']">
-      {/* Import de la police Poppins */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-      `}</style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      <div className="max-w-sm w-full text-center space-y-6">
-        {/* Icône simple sans animation */}
-        <div className="flex justify-center">
-          <div className="w-20 h-20 bg-[#6D3DF2]/5 rounded-3xl flex items-center justify-center">
-            <Settings className="w-10 h-10 text-[#6D3DF2]" />
-          </div>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 384px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .icon-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-light);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-box svg {
+            width: 40px;
+            height: 40px;
+            color: var(--primary);
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .content {
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-main);
+            letter-spacing: -0.025em;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.625;
+            padding: 0 16px;
+        }
+
+        .separator-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .separator {
+            width: 48px;
+            height: 4px;
+            background-color: var(--primary-separator);
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Icône de paramètres (SVG statique) -->
+        <div class="icon-wrapper">
+            <div class="icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.1a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+            </div>
         </div>
 
-        {/* Texte principal */}
-        <div className="space-y-2">
-          <h1 className="text-2xl font-semibold text-gray-900 tracking-tight">
-            Maintenance
-          </h1>
-          <p className="text-gray-500 text-sm leading-relaxed px-4">
-            Notre site est actuellement en cours de maintenance. 
-            Nous serons de retour très bientôt.
-          </p>
+        <!-- Texte principal -->
+        <div class="content">
+            <h1>Maintenance</h1>
+            <p>Notre site est actuellement en cours de maintenance. Nous serons de retour très bientôt.</p>
         </div>
 
-        {/* Séparateur discret */}
-        <div className="flex justify-center">
-          <div className="w-12 h-1 bg-[#6D3DF2]/20 rounded-full"></div>
+        <!-- Séparateur -->
+        <div class="separator-wrapper">
+            <div class="separator"></div>
         </div>
-      </div>
     </div>
-  );
-}
+
+</body>
+</html>
