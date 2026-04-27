@@ -1,0 +1,42 @@
+import React from 'react';
+import { Settings } from 'lucide-react';
+
+/**
+ * Page de Maintenance Ultra-Minimaliste
+ * Style : Sobre, Poppins, Primary #6D3DF2
+ */
+export default function App() {
+  return (
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 font-['Poppins']">
+      {/* Import de la police Poppins */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+      `}</style>
+
+      <div className="max-w-sm w-full text-center space-y-6">
+        {/* Icône simple sans animation */}
+        <div className="flex justify-center">
+          <div className="w-20 h-20 bg-[#6D3DF2]/5 rounded-3xl flex items-center justify-center">
+            <Settings className="w-10 h-10 text-[#6D3DF2]" />
+          </div>
+        </div>
+
+        {/* Texte principal */}
+        <div className="space-y-2">
+          <h1 className="text-2xl font-semibold text-gray-900 tracking-tight">
+            Maintenance
+          </h1>
+          <p className="text-gray-500 text-sm leading-relaxed px-4">
+            Notre site est actuellement en cours de maintenance. 
+            Nous serons de retour très bientôt.
+          </p>
+        </div>
+
+        {/* Séparateur discret */}
+        <div className="flex justify-center">
+          <div className="w-12 h-1 bg-[#6D3DF2]/20 rounded-full"></div>
+        </div>
+      </div>
+    </div>
+  );
+}
